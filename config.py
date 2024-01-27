@@ -1,7 +1,11 @@
 from configparser import ConfigParser
+from pathlib import Path
+
+COMPANIES_JSON_PATH = Path(__file__).parent.joinpath("data", "companies.json")
+DATABASE_INI_PATH = Path(__file__).parent.joinpath("database.ini")
 
 
-def config(filename="database.ini", section="postgresql") -> dict:
+def config(filename=DATABASE_INI_PATH, section="postgresql") -> dict:
     # create a parser
     parser = ConfigParser()
     # read config file
